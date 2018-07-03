@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import "github.com/ibraimgm/goobi/internal/iohandler"
 
 func main() {
-	fmt.Println("Hello world!")
+	lista := registrarTudo()
+	handler := iohandler.GetTerminalIO()
+
+	lista[0].Run(handler)
 }
