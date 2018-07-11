@@ -2,7 +2,11 @@ package obi2017
 
 import (
 	"github.com/ibraimgm/goobi/internal/iohandler"
+	"github.com/ibraimgm/goobi/internal/obiinfo"
 )
+
+// Cofre é a solução para o exercício 'cofre' da OBI 2017/1
+var Cofre = obiinfo.New("cofre", 2017, 1, "https://olimpiada.ic.unicamp.br/pratique/p1/2017/f1/cofre/", cofre)
 
 func cofre(io iohandler.IOHandler) {
 	tamanhoBarra := io.ReadInt()
