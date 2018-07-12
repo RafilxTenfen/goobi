@@ -11,6 +11,7 @@ func registrarTudo() map[string]*obiinfo.OBIInfo {
 	registrar(exercicios, obi2017.Cofre)
 	registrar(exercicios, obi2017.Teleferico)
 	registrar(exercicios, obi2017.Castelos)
+	registrar(exercicios, obi2017.Tabuleiro)
 
 	return exercicios
 }
