@@ -18,6 +18,12 @@ func (io *terminalIO) WriteInt(value int) {
 	io.newLine = false
 }
 
+func (io *terminalIO) WriteStr(value string) {
+	io.printSpaceIfNeeded()
+	fmt.Printf("%s", value)
+	io.newLine = false
+}
+
 func (io *terminalIO) printSpaceIfNeeded() {
 	if !io.newLine {
 		fmt.Print(" ")

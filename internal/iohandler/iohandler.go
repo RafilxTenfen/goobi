@@ -4,4 +4,5 @@ package iohandler
 type IOHandler interface {
 	ReadInt() int
 	WriteInt(value int)
+	WriteStr(value string)
 }
