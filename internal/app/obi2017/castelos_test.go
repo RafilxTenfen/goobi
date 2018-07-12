@@ -1,7 +1,6 @@
 package obi2017
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/ibraimgm/goobi/internal/iohandler"
@@ -59,7 +58,6 @@ func castelosTestHelper(t *testing.T, n, m int, caminhos, ordens, esperado []int
 
 	for i, v := range esperado {
 		x := handler.OutputInt()
-		fmt.Println(x)
 
 		if x != v {
 			t.Errorf("Erro na posição %d. Esperado %d, encontrado %d.\n", i, v, x)
