@@ -10,6 +10,7 @@ func registrarTudo() map[string]*obiinfo.OBIInfo {
 	exercicios := make(map[string]*obiinfo.OBIInfo)
 
 	registrar(exercicios, obi2018.Escadinha)
+	registrar(exercicios, obi2018.Piramide)
 	registrar(exercicios, obi2017.Cofre)
 	registrar(exercicios, obi2017.Teleferico)
 	registrar(exercicios, obi2017.Castelos)
