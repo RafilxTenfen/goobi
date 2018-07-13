@@ -5,7 +5,7 @@ import (
 	"github.com/ibraimgm/goobi/internal/obiinfo"
 )
 
-// Escadinha é a solução para o exercício 'escadinha' da OBI 2018/2
+// Escadinha é a solução para o exercício 'escadinha' da OBI 2018/1
 var Escadinha = obiinfo.New("escadinha", 2018, 1, "https://olimpiada.ic.unicamp.br/pratique/p1/2018/f1/escadinha/", escadinha)
 
 func escadinha(io iohandler.IOHandler) {
