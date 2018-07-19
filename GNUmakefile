@@ -27,6 +27,12 @@ install: deps
 
 build: clean $(APP_EXE)
 
+build-docker: deps
+	GOOS=linux GOARCH=amd64 $(GO) build -o $(APP_NAME) $(PKG_EXE_NAME)
+
+docker: clean build-docker
+	docker build -t goobi .
+
 deps: Gopkg.lock Gopkg.toml
 	$(DEP) ensure
 
@@ -34,6 +40,7 @@ check: $(APP_EXE)
 	go test ./...
 
 clean:
+	rm -f $(APP_EXE)
 	rm -f $(APP_NAME)
 
-.PHONY: all build deps check clean install
+.PHONY: all build deps check clean install build-docker docker
