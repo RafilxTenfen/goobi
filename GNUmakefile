@@ -4,7 +4,6 @@ APP_NAME=goobi
 PKG_NAME=$(PKG_PREFIX)/$(APP_NAME)
 PKG_EXE_NAME=$(PKG_NAME)/cmd/$(APP_NAME)
 
-DEP=dep
 GO=go
 
 UNAME = $(shell uname)
@@ -19,22 +18,19 @@ APP_EXE=$(APP_NAME)$(EXE)
 
 all: $(APP_EXE)
 
-$(APP_EXE): deps
+$(APP_EXE): 
 	$(GO) build -o $(APP_EXE) $(PKG_EXE_NAME)
 
-install: deps
+install: 
 	$(GO) install $(PKG_EXE_NAME)
 
 build: clean $(APP_EXE)
 
-build-docker: deps
+build-docker: 
 	GOOS=linux GOARCH=amd64 $(GO) build -o $(APP_NAME) $(PKG_EXE_NAME)
 
 docker: clean build-docker
 	docker build -t goobi .
-
-deps: Gopkg.lock Gopkg.toml
-	$(DEP) ensure
 
 check: $(APP_EXE)
 	go test ./...
@@ -43,4 +39,4 @@ clean:
 	rm -f $(APP_EXE)
 	rm -f $(APP_NAME)
 
-.PHONY: all build deps check clean install build-docker docker
+.PHONY: all build check clean install build-docker docker
